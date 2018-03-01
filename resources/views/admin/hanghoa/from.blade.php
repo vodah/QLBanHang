@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-<form action="{{route('loaisp.luu')}}" method="POST" class="col-sm-6 col-sm-offset-3 form content_form" enctype="multipart/form-data" novalidate>
+<form action="{{route('loaisp.luu')}}" method="POST" class=" content_form" enctype="multipart/form-data" novalidate>
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{$them->id}}">
     <div class="form-group">
@@ -61,7 +61,19 @@
 
     <div class="form-group">
         <label for="MoTa">Mô Tả<span class="text-danger span_required"> * </span></label>
-        <textarea class="form-control" name="MoTa" id="MoTa" rows="10">{{$them->MoTa}}</textarea>
+        <textarea class="form-control" name="MoTa" id="MoTa" rows="20">{{$them->MoTa}}</textarea>
+
+        <script type="text/javascript">
+            var editor = CKEDITOR.replace('MoTa',{
+                language:'vi',
+                filebrowserBrowseUrl :'/admin-assets/js/plugin/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl : '/admin-assets/js/plugin/ckfinder/ckfinder.html?type=Images',
+                filebrowserFlashBrowseUrl : '/admin-assets/js/plugin/ckfinder/ckfinder.html?type=Flash',
+                filebrowserUploadUrl : '/admin-assets/js/plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                filebrowserImageUploadUrl : '/admin-assets/js/plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                filebrowserFlashUploadUrl : '/admin-assets/js/plugin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+            });
+        </script>﻿
         @if(asset($errors->first('MoTa')))
         <span class="text-danger">{{$errors->first('MoTa')}}</span>
         @endif

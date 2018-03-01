@@ -15,7 +15,6 @@ class HangHoaController extends Controller
     public function index() //lay danh sach tu database
     {
         $hang = hanghoa::paginate(10); //goi den model va lay toan bo du lieu lay duoc gan vao bien $hang
-
         return view('admin.hanghoa.index', compact('hang')); //tra du lieu select duoc ra ngoai view
 
     }
