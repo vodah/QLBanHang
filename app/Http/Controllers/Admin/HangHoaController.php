@@ -60,7 +60,7 @@ class HangHoaController extends Controller
         $DonGia = $all['DonGia'];//gan DonGia vao bien $DonGia
 //        $AnhSP = $request->file('AnhSP');
 
-        // $MoTa = $all['MoTa'];//gan MoTa vao bien $MoTa
+         $MoTa = $all['MoTa'];//gan MoTa vao bien $MoTa
 
 
         if ($id == null) { // kiem tra id gui len
@@ -75,6 +75,7 @@ class HangHoaController extends Controller
                     'SoLuong' => ["required", 'numeric'], //khong duoc de trong va du lieu nhap vao phai la so
                     'DonGia' => ["required", 'numeric'],
                     'AnhSP' => ["required"],
+                    'MoTa' => ["required"],
                 ],
                 [
                     'TenHH.required' => 'Không được để trống trường này',
@@ -85,6 +86,7 @@ class HangHoaController extends Controller
                     'DonGia.numeric' => 'Dữ liệu kiểu số',
                     'SoLuong.numeric' => 'Dữ liệu kiểu số',
                     'AnhSP.required' => 'Thêm ảnh sản phẩm',
+                    'MoTa.required' => 'Không được để trống trường này',
                 ]
 
             );
@@ -99,6 +101,7 @@ class HangHoaController extends Controller
                     // 'TenLoaiHH'=>"required",
                     'SoLuong' => ["required", 'numeric'],
                     'DonGia' => ["required", 'numeric'],
+                    'MoTa' => ["required"],
                 ],
                 [
                     'TenHH.required' => 'Không được để trống trường này',
@@ -108,6 +111,7 @@ class HangHoaController extends Controller
                     'DonGia.required' => 'Nhập giá',
                     'DonGia.numeric' => 'Dữ liệu kiểu số',
                     'SoLuong.numeric' => 'Dữ liệu kiểu số',
+                    'MoTa.required' => 'Không được để trống trường này',
                 ]
 
             );
@@ -144,6 +148,7 @@ class HangHoaController extends Controller
         $them->TenLoaiHH = $hang; //gan gia tri bien $hang vao TenLoaiHH cua bien $them
         $them->SoLuong = $SoLuong; //gan gia tri bien $SoLuong vao SoLuong cua bien $them
         $them->DonGia = $DonGia; //gan gia tri bien $ĐonGia vao ĐonGia cua bien $them
+        $them->MoTa = $MoTa;
 //        $them->AnhSP = $AnhSP;
         // $them->MoTa = $MoTa;
 

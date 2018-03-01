@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-<form action="{{route('loaisp.luu')}}" method="POST" class="col-sm-6 col-sm-offset-3 form" enctype="multipart/form-data" novalidate>
+<form action="{{route('loaisp.luu')}}" method="POST" class="col-sm-6 col-sm-offset-3 form content_form" enctype="multipart/form-data" novalidate>
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{$them->id}}">
     <div class="form-group">
@@ -55,6 +55,15 @@
 
         @if(asset($errors->first('AnhSP')))
         <span class="text-danger">{{$errors->first('AnhSP')}}</span>
+        @endif
+
+    </div>
+
+    <div class="form-group">
+        <label for="MoTa">Mô Tả<span class="text-danger span_required"> * </span></label>
+        <textarea class="form-control" name="MoTa" id="MoTa" rows="10">{{$them->MoTa}}</textarea>
+        @if(asset($errors->first('MoTa')))
+        <span class="text-danger">{{$errors->first('MoTa')}}</span>
         @endif
 
     </div>
