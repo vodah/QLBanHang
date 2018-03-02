@@ -4,7 +4,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:6666
--- Generation Time: Mar 02, 2018 at 03:01 AM
+-- Generation Time: Mar 02, 2018 at 03:14 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.27-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `qlbanhang`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner`
+--
+
+CREATE TABLE `banner` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `TenBanner` varchar(255) NOT NULL,
+  `MoTa` varchar(255) NOT NULL,
+  `AnhBanner` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -176,7 +191,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2014_10_12_000000_create_users_table', 1),
-(14, '2014_10_12_100000_create_password_resets_table', 1);
+(14, '2014_10_12_100000_create_password_resets_table', 1),
+(16, '2018_03_02_073207_create_banner_table', 2);
 
 -- --------------------------------------------------------
 
@@ -234,6 +250,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `address`, `phone`, `rem
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `chitiethoadon`
@@ -302,6 +324,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `daily`
 --
 ALTER TABLE `daily`
@@ -320,7 +347,7 @@ ALTER TABLE `loaihanghoa`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `users`
 --
