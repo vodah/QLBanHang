@@ -48,6 +48,10 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('luu', 'Admin\LienHeController@luu')->name('lienhe.luu');
 
         });
+        Route::group(['prefix' => 'banner'], function (){
+           Route::get('/', 'Admin\BannerController@index')->name('banner.list');
+           Route::get('them', 'Admin\BannerController@them')->name('banner.them');
+        });
     });
 });
 Route::get('/','Client\HomeControler@index')->name('home.list');

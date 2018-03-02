@@ -153,6 +153,14 @@
             </span>
                     </a>
                 </li>
+                <li class=" treeview">
+                    <a href="{{route('banner.list')}}">
+                        <i class="fa fa-bookmark"></i> <span>Quản Lý Banner</span>
+                        <span class="pull-right-container">
+
+            </span>
+                    </a>
+                </li>
 
                 <!--  -->
             </ul>
