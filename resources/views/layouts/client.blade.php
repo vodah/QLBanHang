@@ -138,8 +138,8 @@
                                 <button type="button" class="btn btn-default get">Mua ngay</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="images/home/girl1.jpg" class="girl img-responsive" alt=""/>
-                                <img src="images/home/pricing.png" class="pricing" alt=""/>
+                                <img src="{{asset('client-assets/images/home/girl1.jpg')}}" class="girl img-responsive" alt=""/>
+                                <img src="{{asset('client-assets/images/home/pricing.png')}}" class="pricing" alt=""/>
                             </div>
                         </div>
                         <div class="item">
@@ -181,6 +181,7 @@
                 </div>
 
             </div>
+
         </div>
     </div>
 </section><!--/slider-->
@@ -989,3 +990,4 @@
 <script src="{{asset('client-assets/js/main.js')}}"></script>
 </body>
 </html>
+

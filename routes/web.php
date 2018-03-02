@@ -41,19 +41,20 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'daily'], function () {
             Route::get('themsp', 'Admin\DaiLyController@themsp')->name('daily.themsp');
         });
-        Route::group(['prefix' => 'lienhe'], function (){
+        Route::group(['prefix' => 'lienhe'], function () {
             Route::get('/', 'Admin\LienHeController@index')->name('lienhe.chitiet');
             Route::get('sua/{id}', 'Admin\LienHeController@sua')->name('lienhe.sua');
             Route::get('doimatkhau', 'Admin\LienHeController@doimatkhau')->name('lienhe.doimk');
             Route::post('luu', 'Admin\LienHeController@luu')->name('lienhe.luu');
 
         });
-        Route::group(['prefix' => 'banner'], function (){
-           Route::get('/', 'Admin\BannerController@index')->name('banner.list');
-           Route::get('them', 'Admin\BannerController@them')->name('banner.them');
+        Route::group(['prefix' => 'banner'], function () {
+            Route::get('/', 'Admin\BannerController@index')->name('banner.list');
+            Route::get('them', 'Admin\BannerController@them')->name('banner.them');
+            Route::post('luu', 'Admin\BannerController@luu')->name('banner.luu');
         });
     });
 });
-Route::get('/','Client\HomeControler@index')->name('home.list');
-Route::get('login','Client\LoginControler@index')->name('login.post');
+Route::get('/', 'Client\HomeControler@index')->name('home.list');
+Route::get('login', 'Client\LoginControler@index')->name('login.post');
 
