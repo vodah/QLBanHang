@@ -1,5 +1,6 @@
+@extends('client.footer')
+@extends('client.content')
+@extends('client.banner')
 @extends('layouts.client')
-@section('title', 'Trang Chủ')
-@section('content')
 
-@endsection
+@section('title', 'Trang Chủ')
