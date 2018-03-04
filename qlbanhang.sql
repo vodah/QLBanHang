@@ -4,7 +4,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:6666
--- Generation Time: Mar 02, 2018 at 03:14 PM
+-- Generation Time: Mar 04, 2018 at 04:36 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.27-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -30,11 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `banner` (
   `id` int(10) UNSIGNED NOT NULL,
   `TenBanner` varchar(255) NOT NULL,
-  `MoTa` varchar(255) NOT NULL,
+  `MoTa` varchar(255) DEFAULT NULL,
   `AnhBanner` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `banner`
+--
+
+INSERT INTO `banner` (`id`, `TenBanner`, `MoTa`, `AnhBanner`, `created_at`, `updated_at`) VALUES
+(1, 'Iphone X', '', 'uploads/iphonex-spgry-pureangles_gb-en-screen_1.jpeg', NULL, NULL),
+(3, 'S9', 'sản phẩm hot', 'uploads/S9_1520150824_145898_94e48e200fcfb377f5ed9d8516d13c94.jpg', NULL, NULL),
+(4, 'Note 8', NULL, 'uploads/Note 8_1520155319_3074710_c1eae962d75ad77909bbcb37c10a809f.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -327,7 +336,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `daily`
 --
