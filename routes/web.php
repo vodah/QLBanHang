@@ -51,6 +51,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'banner'], function () {
             Route::get('/', 'Admin\BannerController@index')->name('banner.list');
             Route::get('them', 'Admin\BannerController@them')->name('banner.them');
+            Route::get('sua/{id}', 'Admin\BannerController@sua')->name('banner.sua');
+            Route::get('xoa/{id}', 'Admin\BannerController@xoa')->name('banner.xoa');
             Route::post('luu', 'Admin\BannerController@luu')->name('banner.luu');
         });
     });

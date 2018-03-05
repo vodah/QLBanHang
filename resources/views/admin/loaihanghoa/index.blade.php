@@ -32,12 +32,22 @@
     	<td>{{$element->MaLoaiHH}}</td>
     	<td>{{$element->TenLoaiHH}}</td>
     	<td>
-    		<!-- <a href="" class=" col-md-2 btn btn-info btn-xs">
-	      		<i class="fa fa-pencil"></i> Sửa
-	      	</a> -->
-	      	<a href="{{route('nhomsp.xoa', ['id' => $element->id])}}" class="col-md-4 btn btn-danger btn-sm">
-	      		<i class="fa fa-trash"></i> Xóa bỏ
-	      	</a>
+
+            <button class="btn btn-danger btn-sm button{{$element->id}}">
+                <i class="fa fa-trash"></i>Xóa
+            </button>
+            <script>
+                $(document).ready(function () {
+                    $(".button{{$element->id}}").click(function () {
+                        var r = confirm("Bạn chắc chắn muốn xóa?\n Thao tác này sẽ xóa và không thể hoàn tác");
+                        if (r == true) {
+
+                            window.location.href = '{{route('nhomsp.xoa', [$element->id])}}';
+                        }
+                    });
+                });
+
+            </script>
     	</td>
     	
     </tr>
@@ -50,6 +60,7 @@
         {!! $loai->render() !!}
     </div>
 </div>
+ @endsection
 
 <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -88,4 +99,3 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin-assets/js/demo.js')}}"></script>
 
-@endsection

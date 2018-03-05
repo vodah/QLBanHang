@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\hanghoa;
 use Validator;
+use File;
 
 class HangHoaController extends Controller
 {
@@ -21,11 +22,12 @@ class HangHoaController extends Controller
 
     public function xoa($id, Request $request)
     {
-        $hang = hanghoa::find($id)->delete(); // goi den model va tim lay du lieu theo id lay tu request r xoa
+        $hang = hanghoa::find($id); //goi den model lay du lieu theo id
+        File::delete($hang->AnhSP); //xoa anh trong thu muc uploads
+        $hang->delete(); // xoa
         $request->session()->flash('status', 'Đã xóa thành công!'); //hien thi thong bao xoa thanh cong
         return redirect(route('loaisp.list')); //quay tro lai trang sanh sach
-        // DB::table("hanghoa")->delete($id);
-        // return response()->json(['success'=>"Product Deleted successfully.", 'tr'=>'tr_'.$id]);
+
     }
 
     public function them()
@@ -123,7 +125,7 @@ class HangHoaController extends Controller
         if ($request->hasFile('AnhSP')) {
             $fileExtension = $request->file('AnhSP')->getClientOriginalExtension();
 
-            $fileName = $ten . "_" . time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." . $fileExtension;
+            $fileName = time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." . $fileExtension;
 
 
             $uploadPath = public_path('uploads');

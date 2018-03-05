@@ -38,12 +38,23 @@
             <td>{{$element->MoTa}}</td>
 
             <td>
-                <a href="{{route('loaisp.sua', ['id'=> $element->id])}}" class="  btn btn-info btn-sm">
+                <a href="{{route('banner.sua', ['id'=> $element->id])}}" class="  btn btn-info btn-sm">
                     <i class="fa fa-pencil"></i> Cập Nhật
                 </a>
-                <a href="{{route('loaisp.xoa', ['id' => $element->id])}}" class=" btn btn-danger btn-sm">
-                    <i class="fa fa-trash"></i> Xóa
-                </a>
+                <button class="btn btn-danger btn-sm button{{$element->id}}" >
+                    <i class="fa fa-trash"></i>Xóa</button>
+                <script>
+                    $(document).ready(function(){
+                        $(".button{{$element->id}}").click(function(){
+                            var r = confirm("Bạn chắc chắn muốn xóa?\n Thao tác này sẽ xóa và không thể hoàn tác");
+                            if (r == true) {
+
+                                window.location.href = '{{route('banner.xoa', [$element->id])}}';
+                            }
+                        });
+                    });
+
+                </script>
             </td>
 
         </tr>
@@ -57,6 +68,11 @@
 </div>
 
 @endsection
+
+
+
+
+
 
 <!-- jQuery 2.2.3 -->
 <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
@@ -96,3 +112,4 @@
 <script src="{{asset('admin-assets/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="{{asset('admin-assets/js/demo.js')}}"></script> -->
+

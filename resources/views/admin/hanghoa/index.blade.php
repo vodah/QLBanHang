@@ -36,7 +36,7 @@
 
             <td>{{ ++$key }}</td>
             <td>{{$element->MaHH}}</td>
-            <td >
+            <td>
                 <img src="{{asset($element->AnhSP)}}" style="width: auto; height: 100px;">
             </td>
             <td>{{$element->TenHH}}</td>
@@ -52,9 +52,25 @@
                 <a href="{{route('loaisp.sua', ['id'=> $element->id])}}" class="  btn btn-info btn-sm">
                     <i class="fa fa-pencil"></i> Cập Nhật
                 </a>
-                <a href="{{route('loaisp.xoa', ['id' => $element->id])}}" class=" btn btn-danger btn-sm">
-                    <i class="fa fa-trash"></i> Xóa
-                </a>
+                <button class="btn btn-danger btn-sm button{{$element->id}}">
+                    <i class="fa fa-trash"></i>Xóa
+                </button>
+                <script>
+                    $(document).ready(function () {
+                        $(".button{{$element->id}}").click(function () {
+                            var r = confirm("Bạn chắc chắn muốn xóa?\n Thao tác này sẽ xóa và không thể hoàn tác");
+                            if (r == true) {
+
+                                window.location.href = '{{route('loaisp.xoa', [$element->id])}}';
+                            }
+                        });
+                    });
+
+                </script>
+
+                <!--                <a href="{{route('loaisp.xoa', ['id' => $element->id])}}" class=" btn btn-danger btn-sm">-->
+                <!--                    <i class="fa fa-trash"></i> Xóa-->
+                <!--                </a>-->
             </td>
 
         </tr>
@@ -66,6 +82,8 @@
         {!! $hang->render() !!}
     </div>
 </div>
+
+@endsection
 
 <!-- jQuery 2.2.3 -->
 <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
@@ -113,4 +131,4 @@ function myFunction() {
 }
 </script> -->
 
-@endsection
+

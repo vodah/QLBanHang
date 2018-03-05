@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\UploadedFile;
 use  App\Model\banner;
 use Validator;
+use File;
 
 class BannerController extends Controller
 {
@@ -35,7 +36,7 @@ class BannerController extends Controller
         $banner = banner::all();
 
 
-        return view('admin.banner.form', compact('them', 'banner'));
+        return view('admin.banner.from', compact('them', 'banner'));
     }
 
     /**
@@ -66,9 +67,15 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function sua($id)
     {
-        //
+        $them = banner::find($id);
+        if (!$them) {
+            return redirect(route('banner.list'));
+        }
+        $banner = banner::all();
+        return view('admin.banner.from', compact('them', 'banner'));
+
     }
 
     /**
@@ -89,9 +96,13 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function xoa($id, Request $request)
     {
-        //
+        $banner = banner::find($id);
+        File::delete($banner->AnhBanner);
+        $banner->delete();
+        $request->session()->flash('status', 'Đã xóa thành công!');
+        return redirect(route('banner.list'));
     }
 
     public function luu( Request $request)
@@ -102,31 +113,44 @@ class BannerController extends Controller
         $MoTa = $all['MoTa'];
 
 
-        $this->validate($request,
-            [
-                'TenBanner' => 'required',
-                'AnhBanner' => ['required'],
-            ],
-            [
-                'TenBanner.required' => 'Không được để trống trường này',
-                'AnhBanner.required' => 'Không được để trống trường này',
 
-            ]
-
-        );
 
         if($id == null){
             $them = new banner();
+            $this->validate($request,
+                [
+                    'TenBanner' => 'required',
+                    'AnhBanner' => ['required'],
+                ],
+                [
+                    'TenBanner.required' => 'Không được để trống trường này',
+                    'AnhBanner.required' => 'Không được để trống trường này',
+
+                ]
+
+            );
 
         }
             else{
             $them = banner::find($id);
+                $this->validate($request,
+                    [
+                        'TenBanner' => 'required',
+
+                    ],
+                    [
+                        'TenBanner.required' => 'Không được để trống trường này',
+
+                    ]
+
+                );
             }
 
         if ($request->hasFile('AnhBanner')) {
+            $originalFileName = $request->file('AnhBanner')->getClientOriginalName();
             $fileExtension = $request->file('AnhBanner')->getClientOriginalExtension();
 
-            $fileName = $TenBanner . "_" . time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." . $fileExtension;
+            $fileName = time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." . $fileExtension;
 
 
             $uploadPath = public_path('uploads');
@@ -138,8 +162,10 @@ class BannerController extends Controller
 
         }
 
-        $arr = array('TenBanner' => $TenBanner, 'MoTa' => $MoTa, 'AnhBanner' => $them->AnhBanner);
-        $them->insert($arr);
+        $them->TenBanner = $TenBanner;
+        $them->MoTa = $MoTa;
+
+        $them->save();
 
         $request->session()->flash('status', 'Đã lưu thành công vào CSDL!'); // hien thi thong bao luu thanh cong cho nguoi dung
         return redirect(route('banner.list'));
