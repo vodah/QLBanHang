@@ -100,6 +100,7 @@
                     <ul class="treeview-menu">
                         <li class="active"><a href="{{route('nhomsp.list')}}"><i class="fa fa-circle-o"></i> Nhóm Sản
                                 Phẩm</a></li>
+                        <li><a href="{{route('hang.list')}}"><i class="fa fa-amazon"></i> Hãng Sản Xuất</a></li>
                         <li><a href="{{route('loaisp.list')}}"><i class="fa fa-circle-o"></i> Sản Phẩm</a></li>
                     </ul>
                 </li>

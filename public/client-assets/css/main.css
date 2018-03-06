@@ -411,7 +411,7 @@ ul.sub-menu {
   font-size: 20px;
   line-height: 0;
   display: block;
-  opacity: 0;
+  opacity: 0.5;
    -webkit-transition: 300ms;
   -moz-transition: 300ms;
     -o-transition: 300ms;
@@ -597,7 +597,9 @@ ul.sub-menu {
 .girl {
   margin-left: 0;
 }
-
+.li_price{
+  margin: 10px;
+}
 .item h1 {
   color: #B4B1AB;
   font-family: abel;
@@ -873,7 +875,7 @@ h2.title {
 	font-weight: 700;
 }
 .product-overlay h2{
-	color: #fff;
+	color: red;
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
 	font-weight: 700;
@@ -882,13 +884,14 @@ h2.title {
 
 .productinfo p{
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
-  color: #696763;
+  color: #000;
 }
 
 .productinfo img{
-  width: 100%;
+  width: 280px;
+  height: 195px;
 }
 
 .productinfo{
@@ -904,11 +907,11 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .single-products:hover .product-overlay {
-  display:block;
+  /*display:block;*/
   height:100%;
 }
 
@@ -939,9 +942,9 @@ h2.title {
 
 .product-overlay p{
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
-  color: #fff;
+  color: #000;
 }
 
 
@@ -2527,4 +2530,5 @@ h2.title {
 .search_box_style {
     float: right;
 }
+
 

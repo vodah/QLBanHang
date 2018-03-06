@@ -48,7 +48,8 @@ class HangHoaController extends Controller
 
         $hang = hanghoa::all(); //goi den model va lay toan bo du lieu lay duoc gan vao bien $hang
         $loaihang = DB::table('loaihanghoa')->get();//goi model loaihanghoa va gan vao bien $loaihang
-        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang')); //tra du lieu select duoc ra ngoai view
+        $nhasx = DB::table('nhasanxuat')->get();//goi model loaihanghoa va gan vao bien $loaihang
+        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang', 'nhasx')); //tra du lieu select duoc ra ngoai view
     }
 
     public function luu(Request $request)
@@ -59,9 +60,11 @@ class HangHoaController extends Controller
         $hang = $all['LoaiHH'];//gan LoaiHH vao bien $hang
         $SoLuong = $all['SoLuong'];//gan SoLuong vao bien $SoLuong
         $DonGia = $all['DonGia'];//gan DonGia vao bien $DonGia
-//        $AnhSP = $request->file('AnhSP');
+        $NhaSanXuat = $all['NhaSanXuat'];
 
-         $MoTa = $all['MoTa'];//gan MoTa vao bien $MoTa
+        $MoTa = $all['MoTa'];//gan MoTa vao bien $MoTa
+//        var_dump($all);
+
 
 
         if ($id == null) { // kiem tra id gui len
@@ -121,6 +124,13 @@ class HangHoaController extends Controller
         if ($mahh < 0) {
             $mahh = $mahh * (-1);
         }
+        $NoiBat = isset($_POST["checkbox_NoiBat"]) == true ? $_POST["checkbox_NoiBat"] : "";
+        if($NoiBat == null){
+            $NoiBat = 0;
+        }
+        else {
+            $NoiBat = 1;
+        }
 
         if ($request->hasFile('AnhSP')) {
             $fileExtension = $request->file('AnhSP')->getClientOriginalExtension();
@@ -140,8 +150,9 @@ class HangHoaController extends Controller
 
         $mahh = substr($mahh, 0, 9); //lay 9 so tu vi tri 0 den vi tri thu 9
         $hang = DB::table('loaihanghoa')->where('id', $hang)->first(); //gan gia tri theo id trong bang loaihanghoa vao bien $hang
-
         $hang = $hang->TenLoaiHH; //gan gia tri TenLoaiHH vao bien $hang
+        $NhaSanXuat = DB::table('nhasanxuat')->where('id', $NhaSanXuat)->first();
+        $NhaSanXuat = $NhaSanXuat->TenNhaSanXuat;
 
         // $them = array('id'=>$id,'MaHH' => $mahh, 'TenHH' => $ten, 'TenLoaiHH' => $hang, 'SoLuong' => $SoLuong, 'DonGia' => $DonGia, 'MoTa' => $MoTa);
         $them->MaHH = $mahh; //gan gia tri bien $mahh vao MaHH cua bien $them
@@ -150,6 +161,8 @@ class HangHoaController extends Controller
         $them->SoLuong = $SoLuong; //gan gia tri bien $SoLuong vao SoLuong cua bien $them
         $them->DonGia = $DonGia; //gan gia tri bien $ĐonGia vao ĐonGia cua bien $them
         $them->MoTa = $MoTa;
+        $them->NoiBat = $NoiBat;
+        $them->NhaSanXuat = $NhaSanXuat;
 //        $them->AnhSP = $AnhSP;
         // $them->MoTa = $MoTa;
 

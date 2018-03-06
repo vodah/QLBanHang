@@ -5218,3 +5218,17 @@ table.text-center, table.text-center td, table.text-center th {
         white-space: normal !important
     }
 }
+
+.input_checkbox {
+    width: 30px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+.button_delete {
+    width: 95px;
+}
+
+.button_hang {
+    width: 84px;
+}

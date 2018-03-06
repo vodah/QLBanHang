@@ -1,6 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
+
 <div class="box-body table-responsive no-padding">
     @if (session('status'))
     <div class="alert text-danger" style="font-size: 20px">
@@ -8,53 +9,30 @@
     </div>
     @endif
     <div class="paginate">
-        {!! $hang->render() !!}
+        {!! $nhasx->render() !!}
     </div>
-
-    <table class="table text-center table-hover">
+    <table class="table table-hover">
         <tbody>
         <tr>
             <th>STT</th>
-            <th>Mã Sản Phẩm</th>
-            <th>Ảnh SP</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Loại Sản Phẩm</th>
-            <th>Hãng</th>
-            <th>SL Còn Lại</th>
-            <th>Đơn Giá</th>
-            <!-- <th>Mô Tả</th> -->
-
+            <th>Mã Nhóm Hãng</th>
+            <th>Tên Hãng</th>
             <th>
-                <a href="{{route('loaisp.them')}}" class="btn btn-success btn-sm">
-                    <i class="fa fa-plus"></i> Thêm Sản Phẩm
+                <a href="{{route('hang.them')}}" class="btn btn-success btn-sm">
+                    <i class="fa fa-plus"></i> Thêm Nhóm
                 </a>
             </th>
         </tr>
-        @if($hang->count())
-        @foreach ($hang as $key => $element)
+        @if($nhasx->count())
+        @foreach ($nhasx as $key => $element)
 
-        <tr id="tr_{{$element->id}}">
-
+        <tr>
             <td>{{ ++$key }}</td>
-            <td>{{$element->MaHH}}</td>
+            <td>{{$element->MaHang}}</td>
+            <td>{{$element->TenNhaSanXuat}}</td>
             <td>
-                <img src="{{asset($element->AnhSP)}}" style="width: auto; height: 100px;">
-            </td>
-            <td>{{$element->TenHH}}</td>
-            <td>{{$element->TenLoaiHH}}</td>
-            <td>{{$element->NhaSanXuat}}</td>
-            <td>{{$element->SoLuong}}</td>
-            <td>
-                <?php $aaa = $element->DonGia;
-                $abc = number_format($aaa, 0, ',', '.');
-                echo $abc . "đ";
-                ?>
-            </td>
-            <td>
-                <a href="{{route('loaisp.sua', ['id'=> $element->id])}}" class="  btn btn-info btn-sm">
-                    <i class="fa fa-pencil"></i> Cập Nhật
-                </a>
-                <button class="btn btn-danger btn-sm button{{$element->id}} button_hang">
+
+                <button class="btn btn-danger btn-sm button{{$element->id}} button_delete">
                     <i class="fa fa-trash"></i>Xóa
                 </button>
                 <script>
@@ -63,38 +41,32 @@
                             var r = confirm("Bạn chắc chắn muốn xóa?\n Thao tác này sẽ xóa và không thể hoàn tác");
                             if (r == true) {
 
-                                window.location.href = '{{route('loaisp.xoa', [$element->id])}}';
+                                window.location.href = '{{route('hang.xoa', [$element->id])}}';
                             }
                         });
                     });
 
                 </script>
-
-                <!--                <a href="{{route('loaisp.xoa', ['id' => $element->id])}}" class=" btn btn-danger btn-sm">-->
-                <!--                    <i class="fa fa-trash"></i> Xóa-->
-                <!--                </a>-->
             </td>
 
         </tr>
         @endforeach
         @endif
+
         </tbody>
     </table>
     <div class="paginate">
-        {!! $hang->render() !!}
+        {!! $nhasx->render() !!}
     </div>
 </div>
-
 @endsection
 
-<!-- jQuery 2.2.3 -->
 <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{asset('plugins/jQueryUI/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
+    $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -109,7 +81,7 @@
 <!-- jQuery Knob Chart -->
 <script src="{{asset('plugins/knob/jquery.knob.js')}}"></script>
 <!-- daterangepicker -->
-<script src="{{asset('plugins/daterangepicker/moment.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="{{asset('plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- datepicker -->
 <script src="{{asset('plugins/datepicker/bootstrap-datepicker.js')}}"></script>
@@ -122,15 +94,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('admin-assets/js/app.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('admin-assets/js/pages/dashboard.js')}}"></script>
+<!-- <script src="{{asset('admin-assets/js/pages/dashboard.js')}}"></script> -->
 <!-- AdminLTE for demo purposes -->
-<!-- <script src="{{asset('admin-assets/js/demo.js')}}"></script> -->
-
-
-<!-- <script>
-function myFunction() {
-    alert("Hello! I am an alert box!");
-}
-</script> -->
-
+<script src="{{asset('admin-assets/js/demo.js')}}"></script>
 

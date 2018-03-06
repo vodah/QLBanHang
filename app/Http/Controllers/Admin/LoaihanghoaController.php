@@ -21,8 +21,7 @@ class LoaihanghoaController extends Controller
     public function xoa($id, Request $request)
     {
     	loaihanghoa::find($id)->delete();
-    	// $loai->delete();
-    	// die($loai);
+
         $request->session()->flash('status', 'Đã xóa thành công!');
     	return redirect(route('nhomsp.list'));
     }
@@ -59,7 +58,6 @@ class LoaihanghoaController extends Controller
     	if ($MaLoaiHH < 0) {
     		$MaLoaiHH = $MaLoaiHH*(-1);
     	}
-    	// echo $MaLoaiHH;
     	$MaLoaiHH = substr($MaLoaiHH, 0, 9);
 
 

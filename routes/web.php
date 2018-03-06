@@ -23,6 +23,13 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('save', 'Admin\LoaihanghoaController@luu')->name('nhomsp.luu');
         });
 
+        Route::group(['prefix' => 'hang'], function (){
+            Route::get('/', 'Admin\NhaSanXuatController@index')->name('hang.list');
+            Route::get('them', 'Admin\NhaSanXuatController@them')->name('hang.them');
+            Route::get('xoa/{id}', 'Admin\NhaSanXuatController@xoa')->name('hang.xoa');
+            Route::post('luu', 'Admin\NhaSanXuatController@luu')->name('hang.luu');
+        });
+
         Route::group(['prefix' => 'hanghoa'], function () {
             Route::get('/', 'Admin\HangHoaController@index')->name('loaisp.list');
             Route::get('xoa/{id}', 'Admin\HangHoaController@xoa')->name('loaisp.xoa');

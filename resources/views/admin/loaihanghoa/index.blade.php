@@ -33,7 +33,7 @@
     	<td>{{$element->TenLoaiHH}}</td>
     	<td>
 
-            <button class="btn btn-danger btn-sm button{{$element->id}}">
+            <button class="btn btn-danger btn-sm button{{$element->id}} button_delete">
                 <i class="fa fa-trash"></i>Xóa
             </button>
             <script>

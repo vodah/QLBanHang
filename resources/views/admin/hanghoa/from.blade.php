@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 
-<form action="{{route('loaisp.luu')}}" method="POST" class=" content_form" enctype="multipart/form-data" novalidate>
+<form action="{{route('loaisp.luu')}}" method="POST" class="content_form" enctype="multipart/form-data" novalidate>
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{$them->id}}">
     <div class="form-group">
@@ -25,6 +25,21 @@
         <span class="text-danger">{{$errors->first('TenLoaiHH')}}</span>
         @endif
     </div>
+
+    <div class="form-group">
+        <label for="NhaSanXuat">Hãng Sản Xuất<span class="text-danger span_required"> * </span></label>
+        <select name="NhaSanXuat" class="form-control">
+            <!--            <option value="1">---Chọn Nhóm---</option>-->
+            @foreach ($nhasx as $key => $value)
+            <option value="{{$value->id}}">{{$value->TenNhaSanXuat}}</option>
+            @endforeach
+        </select>
+        @if(asset($errors->first('TenNhaSanXuat')))
+        <span class="text-danger">{{$errors->first('TenNhaSanXuat')}}</span>
+        @endif
+    </div>
+
+
     <div class="form-group">
         <label for="SoLuong">Số lượng<span class="text-danger span_required"> * </span></label>
         <input type="text" class="form-control" value="{{$them->SoLuong}}" id="SoLuong" name="SoLuong"
@@ -56,6 +71,12 @@
         @if(asset($errors->first('AnhSP')))
         <span class="text-danger">{{$errors->first('AnhSP')}}</span>
         @endif
+
+    </div>
+
+    <div class="form-group">
+        <label for="checkbox">Nổi Bật</label>
+        <input type="checkbox" class="input_checkbox"  id="checkbox_NoiBat" name="checkbox_NoiBat">
 
     </div>
 
