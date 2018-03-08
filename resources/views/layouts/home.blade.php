@@ -150,18 +150,31 @@
                     <a href="">
                         <i class="fa fa-user-circle-o"></i> <span>Quản Lý Khách Hàng </span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+              <i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                 </li>
                 <li class=" treeview">
                     <a href="{{route('banner.list')}}">
                         <i class="fa fa-bookmark"></i> <span>Quản Lý Banner</span>
                         <span class="pull-right-container">
-
-            </span>
+                        </span>
                     </a>
                 </li>
+
+                <li class=" treeview">
+                    <a href="{{route('banner.list')}}">
+                        <i class="fa fa-wrench"></i> <span>Cấu Hình</span>
+                        <span class="pull-right-container">
+                                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="active"><a href="{{route('nhomsp.list')}}"><i class="fa fa-circle-o"></i>Giới Thiệu</a></li>
+                        <li><a href="{{route('cauhinh.thongtin')}}"><i class="fa fa-circle-o"></i>Thông tin liên lạc</a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <!--  -->
             </ul>

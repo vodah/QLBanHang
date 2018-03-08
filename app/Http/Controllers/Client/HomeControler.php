@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\loaihanghoa;
 use App\Model\hanghoa;
+use App\User;
 
 class HomeControler extends Controller
 {
@@ -17,6 +18,19 @@ class HomeControler extends Controller
         $banner = banner::all();
         $hanghoa = hanghoa::all();
         $hang = nhasanxuat::all();
-        return view('client.home', compact('loai', 'banner', 'hanghoa','hang'));
+        $user = User::find('1');
+        return view('client.home', compact('loai', 'banner', 'hanghoa', 'hang','user'));
+    }
+
+    public function lienhe()
+    {
+        $user = User::find('1');
+
+        return view('client.lienhe', compact('user') );
+    }
+
+    public function gioithieu()
+    {
+        return view('client.gioithieu');
     }
 }

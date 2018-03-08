@@ -36,8 +36,8 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> 0981639326</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> anhsonit96@gmail.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> {{$user->phone}}</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> {{$user->email}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="{{asset('client-assets/images/home/logo.png')}}" alt=""/></a>
+                        <a href="{{route('home.list')}}"><img src="{{asset('client-assets/images/home/logo.png')}}" alt=""/></a>
                     </div>
 
                 </div>
@@ -95,15 +95,15 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="" class="active"><b>Trang Chủ</b></a></li>
+                            <li><a href="{{route('home.list')}}" class="active"><b>Trang Chủ</b></a></li>
                             <li class="dropdown"><a href="#"><b>Sản Phẩm</b></i></a>
 
                             </li>
                             <li class="dropdown"><a href="#"><b>Tin Tức</b></i></a>
 
                             </li>
-                            <li><a href="404.html"><b>Giới Thiệu</b></a></li>
-                            <li><a href="contact-us.html"><b>Liên Hệ</b></a></li>
+                            <li><a href="{{route('home.gioithieu')}}"><b>Giới Thiệu</b></a></li>
+                            <li><a href="{{route('home.lienhe')}}"><b>Liên Hệ</b></a></li>
                         </ul>
                     </div>
                 </div>
@@ -123,12 +123,8 @@
 </section><!--/slider-->
 
 
-
 @section('content')
-
 @section('footer')
-
-
 
 
 <script src="{{asset('client-assets/js/jquery.js')}}"></script>
@@ -137,6 +133,9 @@
 <script src="{{asset('client-assets/js/price-range.js')}}"></script>
 <script src="{{asset('client-assets/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('client-assets/js/main.js')}}"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="{{asset('client-assets/js/gmaps.js')}}"></script>
+<script src="{{asset('client-assets/js/contact.js')}}"></script>
 </body>
 </html>
 
