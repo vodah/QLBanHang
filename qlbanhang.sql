@@ -4,9 +4,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:6666
--- Generation Time: Mar 07, 2018 at 12:52 AM
+-- Generation Time: Mar 08, 2018 at 03:35 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.27-1+ubuntu16.04.1+deb.sury.org+1
+-- PHP Version: 7.0.28-1+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -128,7 +128,6 @@ INSERT INTO `hanghoa` (`id`, `MaHH`, `TenHH`, `TenLoaiHH`, `SoLuong`, `DonGia`, 
 (24, '261103379', 'Xperia XZ2', 'Điện Thoại', 50, '18000000', '<h2>Xperia XZ2 l&agrave; chiếc flagship mới được&nbsp;<a href="https://www.thegioididong.com/dtdd-sony" target="_blank" title="Điện thoại Sony">Sony</a>&nbsp;giới thiệu tại&nbsp;MWC 2018 với sự thay đổi lớn về thiết kế so với những người tiền nhiệm.</h2>\r\n\r\n<h3><strong>Lột x&aacute;c về thiết kế</strong></h3>\r\n\r\n<p>Với Xperia XZ2, ng&ocirc;n ngữ thiết kế &quot;Omni Balance&quot; trứ danh một thời của Sony đ&atilde; đi v&agrave;o dĩ v&atilde;ng để nhường chỗ cho một thiết kế mới mẻ v&agrave; đột ph&aacute; hơn hẳn.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz23.jpg" onclick="return false;"><img alt="Lột xác về thiết kế" src="https://cdn4.tgdd.vn/Products/Images/42/146014/sony-xperia-xz23.jpg" title="Lột xác về thiết kế" /></a></p>\r\n\r\n<p>Sự thay đổi lớn nhất của Xperia XZ2 so với&nbsp;<a href="https://www.thegioididong.com/dtdd/sony-xperia-xz1" target="_blank" title="Sony Xperia XZ1" type="Sony Xperia XZ1">Xperia XZ1</a>&nbsp;đ&oacute; ch&iacute;nh l&agrave; mặt lưng đ&atilde; được l&agrave;m cong để gi&uacute;p tay của ch&uacute;ng ta &ocirc;m gọn được chiếc m&aacute;y dễ d&agrave;ng hơn.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz24.jpg" onclick="return false;"><img alt="Lột xác về thiết kế" src="https://cdn1.tgdd.vn/Products/Images/42/146014/sony-xperia-xz24.jpg" title="Lột xác về thiết kế" /></a></p>\r\n\r\n<p>Chất liệu k&iacute;nh&nbsp;<a href="https://www.thegioididong.com/tin-tuc/gorilla-glass-5-ra-mat-smartphone-roi-tu-do-cao-1-6-met-vo-tu-860409" target="_blank" title="Gorilla Glass 5">Gorilla Glass 5</a>&nbsp;xuất hiện ở cả 2 mặt của chiếc Xperia XZ2 c&ugrave;ng cảm biến v&acirc;n tay được xếp dọc ngay ch&iacute;nh giữa phần mặt lưng tạo n&ecirc;n sự c&acirc;n đối về mặt thẩm mỹ.</p>\r\n\r\n<p>Mặt k&iacute;nh của Xperia XZ2 được l&agrave;m cong 2.5D ở cả 4 cạnh gi&uacute;p phần th&acirc;n m&aacute;y liền lạc hơn hẳn.</p>\r\n\r\n<h3><strong>M&agrave;n h&igrave;nh sắc n&eacute;t</strong></h3>\r\n\r\n<p>Xperia XZ2 cũng l&agrave; chiếc smartphone đầu ti&ecirc;n của Sony sở hữu m&agrave;n h&igrave;nh tr&agrave;n viền 18:9 với k&iacute;ch thước 5.7 inch.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz26.jpg" onclick="return false;"><img alt="Màn hình sắc nét" src="https://cdn3.tgdd.vn/Products/Images/42/146014/sony-xperia-xz26.jpg" title="Màn hình sắc nét" /></a></p>\r\n\r\n<p>Kh&aacute; đ&aacute;ng tiếc l&agrave;&nbsp;m&agrave;n h&igrave;nh của Xperia XZ2 chỉ dừng lại ở mức&nbsp;<a href="https://www.thegioididong.com/tin-tuc/do-phan-giai-man-hinh-qhd-hd-fullhd-2k-4k-la-gi--592178#2k" target="_blank" title="Độ phân giải Full HD+" type="Độ phân giải Full HD+">Full HD+</a>&nbsp;nhưng lại sở hữu c&ocirc;ng nghệ HDR nổi tiếng tới từ Sony c&ugrave;ng khả năng chuyển đổi những nội dung từ SDR sang HDR ti&ecirc;n tiến.</p>\r\n\r\n<h3><strong>Hiệu năng h&agrave;ng đầu</strong></h3>\r\n\r\n<p>Xperia XZ2 sẽ sử dụng vi xử l&yacute;&nbsp;<a href="https://www.thegioididong.com/tin-tuc/chip-snapdragon-845-manh-hon-25-tap-trung-ai-bao-mat-cao-1048166" target="_blank" title="Snapdragon 845">Snapdragon 845</a>&nbsp;c&ugrave;ng 4 GB RAM v&agrave; 64 GB bộ nhớ trong.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz25.jpg" onclick="return false;"><img alt="Hiệu năng hàng đầu" src="https://cdn.tgdd.vn/Products/Images/42/146014/sony-xperia-xz25.jpg" title="Hiệu năng hàng đầu" /></a></p>\r\n\r\n<p>Với vi xử l&iacute; n&agrave;y th&igrave; kh&ocirc;ng c&ograve;n g&igrave; nghi ngờ nữa, Xperia XZ2 sẽ l&agrave; một trong những chiếc smartphone mạnh nhất ở thời điểm hiện tại.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz27.jpg" onclick="return false;"><img alt="Hiệu năng hàng đầu" src="https://cdn2.tgdd.vn/Products/Images/42/146014/sony-xperia-xz27.jpg" title="Hiệu năng hàng đầu" /></a></p>\r\n\r\n<p>M&aacute;y sẽ chạy sẵn&nbsp;<a href="https://www.thegioididong.com/tin-tuc/android-8-la-gi-vi-sao-co-ten-goi-khac-la-android-o--966604" target="_blank" title="Android 8.0">Android 8.0</a>&nbsp;c&ugrave;ng giao diện Sony nhẹ nh&agrave;ng hứa hẹn sẽ đem lại một tốc độ phản hồi ấn tượng.</p>\r\n\r\n<h3><strong>Vẫn chỉ l&agrave; camera đơn</strong></h3>\r\n\r\n<p>Xperia XZ2 được trang bị camera Motion Eye độ phẩn giải 19 MP v&agrave; chưa c&oacute; camera k&eacute;p.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz22.jpg" onclick="return false;"><img alt="Vẫn chỉ là camera đơn" src="https://cdn4.tgdd.vn/Products/Images/42/146014/sony-xperia-xz22.jpg" title="Vẫn chỉ là camera đơn" /></a></p>\r\n\r\n<p>Một cải tiến đ&aacute;ng gi&aacute; tr&ecirc;n XZ2 l&agrave; m&aacute;y c&oacute; thể quay được c&aacute;c thước phim si&ecirc;u chậm, l&ecirc;n tới 960 khung h&igrave;nh/gi&acirc;y ở độ ph&acirc;n giải Full HD.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz21.jpg" onclick="return false;"><img alt="Vẫn chỉ là camera đơn" src="https://cdn1.tgdd.vn/Products/Images/42/146014/sony-xperia-xz21.jpg" title="Vẫn chỉ là camera đơn" /></a></p>\r\n\r\n<p>B&ecirc;n cạnh đ&oacute; camera selfie của m&aacute;y c&oacute; độ ph&acirc;n giải 5 MP, nghe qua kh&ocirc;ng mấy ấn tượng nhưng đổi lại, bạn c&oacute; thể sử dụng ứng dụng 3D Creator để tạo ra khu&ocirc;n mặt 3D của m&igrave;nh bằng cụm camera selfie n&agrave;y.</p>\r\n\r\n<h3><strong>&Acirc;m thanh h&agrave;ng đầu</strong></h3>\r\n\r\n<p>Xperia XZ2 lần n&agrave;y đ&atilde; được Sony bỏ đi cổng cắm tai nghe 3.5 mm v&agrave; theo Sony th&igrave; điều n&agrave;y gi&uacute;p h&atilde;ng c&oacute; thể đem lại chất lượng &acirc;m thanh tốt hơn khi nghe qua tai nghe.</p>\r\n\r\n<p><a href="https://www.thegioididong.com/images/42/146014/sony-xperia-xz28.jpg" onclick="return false;"><img alt="Âm thanh hàng đầu" src="https://cdn3.tgdd.vn/Products/Images/42/146014/sony-xperia-xz28.jpg" title="Âm thanh hàng đầu" /></a></p>\r\n\r\n<p>Ngo&agrave;i ra loa ngo&agrave;i của m&aacute;y cũng rất ấn tượng với&nbsp;c&ocirc;ng nghệ S-Force Front Surround System đến từ Sony, qua đ&oacute; gi&uacute;p Xperia XZ2 sẽ c&oacute; &acirc;m lượng lớn hơn 20% so với&nbsp;<a href="https://www.thegioididong.com/dtdd/sony-xperia-xz1" target="_blank" title="Xperia XZ1">Xperia XZ1</a>.</p>', '2018-03-06 11:53:04', '2018-01-30 08:45:14', 'uploads/1520337184_2232509_482ce314753853d5c881aa5cf9a123b6.jpeg', 1, 'Sony'),
 (25, '870999836', 'iphone 8 plus', 'Điện Thoại', 100, '25000000', NULL, '2018-01-31 19:03:08', '2018-01-30 17:36:28', 'uploads/1517425388_8457621_5c5812be40d2a72e4abb1fae2a7ef87f.jpeg', 1, 'Iphone'),
 (27, '334008535', 'bfda', 'Điện Thoại', 12, '100000', NULL, '2018-01-31 18:59:17', '2018-01-30 18:01:20', 'uploads/1517425157_9289850_e1e83affa4b11e375c0d4841c492f20a.jpg', 0, NULL),
-(28, '124457255', 'Điều hòa Funiki', 'Điều Hòa', 20, '12000000', NULL, '2018-01-31 19:07:23', '2018-01-31 19:07:23', 'uploads/1517425643_3598396_0b83305ca80d0c823563510db3c312f3.png', 0, NULL),
 (29, '386391354', 'Galaxy S9', 'Điện Thoại', 20, '23000000', '<p><img alt="" src="/ckfinder/userfiles/images/sad.jpg" style="height:720px; width:1280px" /></p>\r\n\r\n<p>đ&acirc;y l&agrave; m&ocirc; tả chi tiết galaxy s9</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt="" src="/ckfinder/userfiles/images/180225113702-samsung-galaxy-s9-s9-780x439.jpg" style="height:439px; width:780px" /></p>', '2018-03-06 11:17:32', '2018-03-01 17:04:17', 'uploads/Galaxy S9_1520277542_706503_a93422105638f01302f1c9069cabf889.jpg', 1, 'SamSung');
 
 -- --------------------------------------------------------
@@ -153,6 +152,30 @@ CREATE TABLE `hoadon` (
   `NguoiHuyHD` binary(255) DEFAULT NULL,
   `LyDoHuy` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lienhe`
+--
+
+CREATE TABLE `lienhe` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `Ten` varchar(255) NOT NULL,
+  `DiaChi` varchar(255) NOT NULL,
+  `Sdt` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `MoTa` longtext NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `lienhe`
+--
+
+INSERT INTO `lienhe` (`id`, `Ten`, `DiaChi`, `Sdt`, `Email`, `MoTa`, `created_at`, `updated_at`) VALUES
+(1, 'Tên Shop', 'Mỗ Lao, Hà Đông, Hà Nội, Việt Nam', '0981639326', 'anhsonit96@gmail.com', 'Mô Tả', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -198,7 +221,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2014_10_12_000000_create_users_table', 1),
 (14, '2014_10_12_100000_create_password_resets_table', 1),
 (16, '2018_03_02_073207_create_banner_table', 2),
-(18, '2018_03_06_094619_create_nhasanxuat_table', 3);
+(18, '2018_03_06_094619_create_nhasanxuat_table', 3),
+(19, '2018_03_08_081046_create_lienhe_table', 4);
 
 -- --------------------------------------------------------
 
@@ -278,7 +302,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `address`, `phone`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Anh Sơn', 'admin@abc.com', '$2y$10$NylLGOgunq7RNDTdA/S4xuHAi0J8CK380U92Ta7SzphHIXtapZvJq', 'Mỗ Lao, Hà Đông, Hà Nội', '0981639326', 'WnDWgQWhT00pOyATwHU7w7ke9ORWZm7MCZQePxZYlqwg70EipSEWADKTn0Qt', NULL, NULL),
+(1, 'Anh Sơn', 'anhsonit96@gmail.com', '$2y$10$NylLGOgunq7RNDTdA/S4xuHAi0J8CK380U92Ta7SzphHIXtapZvJq', 'Mỗ Lao, Hà Đông, Hà Nội', '0981639326', 'O9xU7LEJUisyQpUjYNjR0iMGM3yCOZJNc4ZmKWDFkQZDd6Z71DzbnSCuWwd1', NULL, NULL),
 (2, 'Vô Danh', 'client@abc.com', '$2y$10$F/lKzQ8FdeaE3ZlNgTj98e4LD30i0hkCnrHlEU0lvOCW3ddpk898a', 'Mỗ Lao, Hà Đông, Hà Nội, Việt Nam', '0981639326', 'KLbeuEfQZUCUFLPa9iCisr7XRaRT4D7xu44jWYHOPHlemePrxI2rFn8CR9vr', NULL, '2018-02-07 12:28:10');
 
 --
@@ -320,6 +344,12 @@ ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`MaHD`),
   ADD KEY `DaiLy` (`DaiLy`),
   ADD KEY `NguoiBan` (`NguoiBan`);
+
+--
+-- Indexes for table `lienhe`
+--
+ALTER TABLE `lienhe`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `loaihanghoa`
@@ -379,6 +409,11 @@ ALTER TABLE `daily`
 ALTER TABLE `hanghoa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
+-- AUTO_INCREMENT for table `lienhe`
+--
+ALTER TABLE `lienhe`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `loaihanghoa`
 --
 ALTER TABLE `loaihanghoa`
@@ -387,7 +422,7 @@ ALTER TABLE `loaihanghoa`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `nhasanxuat`
 --
