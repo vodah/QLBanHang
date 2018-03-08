@@ -26,8 +26,8 @@
                             <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Nhập nội dung tin nhắn"></textarea>
                         </div>
                         <div class="form-group col-md-12">
-<!--                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">-->
-                            <button type="submit" name="submit" class="btn btn-primary pull-right">Gửi</button>
+                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Gửi">
+<!--                            <button type="submit" name="submit" class="btn btn-primary pull-right">Gửi</button>-->
                         </div>
                     </form>
                 </div>
@@ -37,9 +37,9 @@
                     <h2 class="title text-center">thông tin liên lạc</h2>
                     <address>
 <!--                        <p>E-Shopper Inc.</p>-->
-                        <p>Địa chỉ: {{$user->address}}</p>
-                        <p>Số điện thoại: {{$user->phone}}</p>
-                        <p>Email: {{$user->email}}</p>
+                        <p>Địa chỉ: {{$lienhe->DiaChi}}</p>
+                        <p>Số điện thoại: {{$lienhe->Sdt}}</p>
+                        <p>Email: {{$lienhe->Email}}</p>
                     </address>
 <!--                    <div class="social-networks">-->
 <!--                        <h2 class="title text-center">Social Networking</h2>-->

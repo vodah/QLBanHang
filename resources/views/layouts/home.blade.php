@@ -169,7 +169,7 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="{{route('nhomsp.list')}}"><i class="fa fa-circle-o"></i>Giới Thiệu</a></li>
+                        <li class="active"><a href="{{route('cauhinh.gioithieu')}}"><i class="fa fa-circle-o"></i>Giới Thiệu</a></li>
                         <li><a href="{{route('cauhinh.thongtin')}}"><i class="fa fa-circle-o"></i>Thông tin liên lạc</a>
                         </li>
                     </ul>
@@ -198,9 +198,16 @@
 
         <!-- Main content -->
         <div class="content">
+
             @section('content')
             <h1 class="text-center text-red" style="font-size: 45px;">
                 <b>Chào mừng {{ Auth::user()->name }} đến với trang quản trị</h1>
+
+            @if (session('status'))
+            <div class="alert text-danger" style="font-size: 20px">
+                <strong>{{session('status')}}</strong>
+            </div>
+            @endif
         </div>
 
         <!-- /.content -->

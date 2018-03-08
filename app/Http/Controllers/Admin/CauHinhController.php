@@ -31,7 +31,7 @@ class CauHinhController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +42,7 @@ class CauHinhController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -53,30 +53,67 @@ class CauHinhController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function luu(Request $request)
     {
-        //
+        $all = $request->all();
+        $Ten = $all['Ten'];
+        $Email = $all['Email'];
+        $DiaChi = $all['DiaChi'];
+        $Sdt = $all['Sdt'];
+        $MoTa = $all['MoTa'];
+//
+
+        $this->validate($request,
+            [
+                'Ten' => ["required"],
+                'DiaChi' => ["required"],
+                'Email' => ["required", 'email'],
+                'Sdt' => ["required", 'numeric'],
+
+                'MoTa' => ["required"],
+            ],
+            [
+                'Ten.required' => 'Không được để trống trường này',
+                'DiaChi.required' => 'Không được để trống trường này',
+                'Email.required' => 'Không được để trống trường này',
+                'Email.email' => 'Trường nhập vào phải là email',
+                'Sdt.required' => 'Không được để trống trường này',
+                'Sdt.numeric' => 'dữ liệu kiểu số',
+                'MoTa.required' => 'Không được để trống trường này',
+            ]
+
+        );
+
+        $sua = lienhe::find('1');
+
+        $sua->Ten = $Ten;
+        $sua->Email = $Email;
+        $sua->DiaChi = $DiaChi;
+        $sua->Sdt = $Sdt;
+        $sua->MoTa = $MoTa;
+
+        $sua->save();
+        $request->session()->flash('status', 'Đã Cập nhật thành công!');
+        return redirect(route('home'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -84,8 +121,24 @@ class CauHinhController extends Controller
         //
     }
 
-    public function thongtin(){
-        $lienhe = lienhe::all();
-        return view('admin.lienhe.thongtin', compact('lienhe'));
+//    public function thongtin(){
+//        $lienhe = lienhe::all();
+//        return view('admin.lienhe.thongtin', compact('lienhe'));
+//    }
+
+    public function thongtin()
+    {
+        $sua = lienhe::find('1');
+        $tt = 1;
+
+        return view('admin.lienhe.form2', compact('sua', 'tt'));
+    }
+
+    public function gioithieu()
+    {
+        $sua = lienhe::find('1');
+        $tt = 0;
+
+        return view('admin.lienhe.form2', compact('sua', 'tt'));
     }
 }

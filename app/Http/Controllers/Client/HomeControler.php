@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Client;
 
 use App\Model\banner;
+use App\Model\lienhe;
 use App\Model\nhasanxuat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\loaihanghoa;
 use App\Model\hanghoa;
-use App\User;
 
 class HomeControler extends Controller
 {
@@ -18,19 +18,28 @@ class HomeControler extends Controller
         $banner = banner::all();
         $hanghoa = hanghoa::all();
         $hang = nhasanxuat::all();
-        $user = User::find('1');
-        return view('client.home', compact('loai', 'banner', 'hanghoa', 'hang','user'));
+        $lienhe = lienhe::find('1');
+        return view('client.home', compact('loai', 'banner', 'hanghoa', 'hang','lienhe'));
+    }
+    public function sanpham() {
+        $loai = loaihanghoa::all();
+
+        $hanghoa = hanghoa::paginate(9);
+        $hang = nhasanxuat::all();
+        $lienhe = lienhe::find('1');
+        return view('client.sanpham', compact('loai', 'hanghoa', 'hang','lienhe'));
     }
 
     public function lienhe()
     {
-        $user = User::find('1');
+        $lienhe = lienhe::find('1');
 
-        return view('client.lienhe', compact('user') );
+        return view('client.lienhe', compact('lienhe') );
     }
 
     public function gioithieu()
     {
-        return view('client.gioithieu');
+        $lienhe = lienhe::find('1');
+        return view('client.gioithieu', compact('lienhe'));
     }
 }

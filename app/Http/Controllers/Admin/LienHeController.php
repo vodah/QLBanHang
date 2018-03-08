@@ -62,7 +62,7 @@ class LienHeController extends Controller
     public function sua($id)
     {
         $sua = User::find($id);
-//        var_dump($sua);
+
         if (!$sua) {
             return redirect(route('lienhe.chitiet')); // neu khong ton tai thi chuyen ve trang list san pham
         }

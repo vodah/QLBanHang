@@ -64,10 +64,13 @@ Route::group(['prefix' => 'admin'], function () {
         });
         Route::group(['prefix' => 'caidat'], function (){
            Route::get('thongtin', 'Admin\CauHinhController@thongtin')->name('cauhinh.thongtin');
+           Route::get('gioithieu', 'Admin\CauHinhController@gioithieu')->name('cauhinh.gioithieu');
+           Route::post('thongtin/luu', 'Admin\CauHinhController@luu')->name('cauhinh.luu');
         });
     });
 });
 Route::get('/', 'Client\HomeControler@index')->name('home.list');
+Route::get('sanpham', 'Client\HomeControler@sanpham')->name('home.sanpham');
 Route::get('lienhe', 'Client\HomeControler@lienhe')->name('home.lienhe');
 Route::get('gioithieu', 'Client\HomeControler@gioithieu')->name('home.gioithieu');
 Route::get('login', 'Client\LoginControler@index')->name('login.post');

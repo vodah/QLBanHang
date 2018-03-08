@@ -36,8 +36,8 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> {{$user->phone}}</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> {{$user->email}}</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> {{$lienhe->Sdt}}</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> {{$lienhe->Email}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="{{route('home.list')}}" class="active"><b>Trang Chủ</b></a></li>
-                            <li class="dropdown"><a href="#"><b>Sản Phẩm</b></i></a>
+                            <li ><a href="{{route('home.sanpham')}}"><b>Sản Phẩm</b></i></a>
 
                             </li>
                             <li class="dropdown"><a href="#"><b>Tin Tức</b></i></a>
