@@ -1,4 +1,7 @@
 <?php
+Route::get('not-found', function(){
+    return view('not-found');
+})->name('error.404');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', function ($msg = null) {
@@ -75,4 +78,6 @@ Route::get('lienhe', 'Client\HomeControler@lienhe')->name('home.lienhe');
 Route::get('gioithieu', 'Client\HomeControler@gioithieu')->name('home.gioithieu');
 Route::get('chitiet', 'Client\HomeControler@chitiet')->name('home.chitiet');
 Route::get('login', 'Client\LoginControler@index')->name('login.post');
+
+
 
