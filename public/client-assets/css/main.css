@@ -2530,5 +2530,15 @@ h2.title {
 .search_box_style {
     float: right;
 }
+.continue_div {
+  float: right;
+
+}
+.continue_a {
+
+  float: right;
+  color: #ffff;
+  margin-top: 9px;
+}
 
 

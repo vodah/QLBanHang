@@ -35,8 +35,9 @@ class HangHoaController extends Controller
         $them = new hanghoa(); //goi model tao 1 du lieu moi
 
         $hang = hanghoa::all(); //goi den model va lay toan bo du lieu lay duoc gan vao bien $hang
+        $nhasx = DB::table('nhasanxuat')->get();
         $loaihang = DB::table('loaihanghoa')->get(); //goi model loaihanghoa va gan vao bien $loaihang
-        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang')); //tra du lieu select duoc ra ngoai view
+        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang', 'nhasx')); //tra du lieu select duoc ra ngoai view
     }
 
     public function sua($id)
@@ -163,8 +164,6 @@ class HangHoaController extends Controller
         $them->MoTa = $MoTa;
         $them->NoiBat = $NoiBat;
         $them->NhaSanXuat = $NhaSanXuat;
-//        $them->AnhSP = $AnhSP;
-        // $them->MoTa = $MoTa;
 
 
         $them->save(); //luu gia tri cua bien $them vao database

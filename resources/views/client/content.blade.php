@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Danh Mục</h2>
+                    <h2>Hãng</h2>
                     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
 
-                        @foreach($loai as $item)
+                        @foreach($hang as $item)
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">{{$item->TenLoaiHH}}</a></h4>
+                                <h4 class="panel-title"><a href="#">{{$item->TenNhaSanXuat}}</a></h4>
                             </div>
                         </div>
                         @endforeach
@@ -80,12 +80,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--                            <div class="choose">-->
-                                    <!--                                <ul class="nav nav-pills nav-justified">-->
-                                    <!--                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>-->
-                                    <!--                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>-->
-                                    <!--                                </ul>-->
-                                    <!--                            </div>-->
                                 </div>
                             </div>
                     @endif
@@ -95,17 +89,20 @@
                 </div><!--features_items-->
 
                 <div class="category-tab"><!--category-tab-->
+                    @foreach ($loai as $a)
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tshirt" data-toggle="tab">Tất cả</a></li>
-                            @foreach($hang as $item)
-                            <li><a href="{{$item->TenNhaSanXuat}}" data-toggle="tab">{{$item->TenNhaSanXuat}}</a></li>
-                            @endforeach
+                            <li class="active"><a href="{{$a->TenLoaiHH}}" data-toggle="tab">{{$a->TenLoaiHH}}</a></li>
+                            <div class="col-sm-2 continue_div"><a href="" class="continue_a"> xem thêm >></a></div>
                         </ul>
+
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane fade active in" id="tshirt">
+
+                        <div class="tab-pane fade active in">
                             @foreach ($hanghoa as $item)
+                            <?php if( $item->TenLoaiHH == $a->TenLoaiHH) { ?>
+
                             <div class="col-sm-3">
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
@@ -125,41 +122,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                             @endforeach
-
                         </div>
 
-                        @foreach( $hang as $element)
 
-                        <div class="tab-pane fade" id="{{$element->TenNhaSanXuat}}">
-                            @foreach ($hanghoa as $item)
-                            @if( $item->NhaSanXuat == $element->TenNhaSanXuat)
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{asset($item->AnhSP)}}" alt=""/>
-                                            <h2><?php $aaa = $item->DonGia;
-                                                $abc = number_format($aaa, 0, ',', '.');
-                                                echo $abc . "đ";
-                                                ?></h2>
-                                            <p>{{$item->TenHH}}</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Thêm</a>
-                                            <a href="#" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-info-circle"></i>Chi Tiết</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
-                            @endforeach
-
-                        </div>
-                        @endforeach
 
                 </div><!--/category-tab-->
+                    @endforeach
 
 <!--                <div class="recommended_items"><!--recommended_items-->
 <!--                    <h2 class="title text-center">recommended items</h2>-->
