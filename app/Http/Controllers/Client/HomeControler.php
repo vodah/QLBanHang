@@ -23,7 +23,6 @@ class HomeControler extends Controller
     }
     public function sanpham() {
         $loai = loaihanghoa::all();
-
         $hanghoa = hanghoa::paginate(9);
         $hang = nhasanxuat::all();
         $lienhe = lienhe::find('1');
@@ -41,5 +40,14 @@ class HomeControler extends Controller
     {
         $lienhe = lienhe::find('1');
         return view('client.gioithieu', compact('lienhe'));
+    }
+
+    public function chitiet()
+    {
+        $lienhe = lienhe::find('1');
+        $hanghoa = hanghoa::find('6');
+        $hang = nhasanxuat::all();
+        $loai = loaihanghoa::all();
+        return view('client.chitiet', compact('lienhe', 'hanghoa', 'loai', 'hang'));
     }
 }

@@ -73,5 +73,6 @@ Route::get('/', 'Client\HomeControler@index')->name('home.list');
 Route::get('sanpham', 'Client\HomeControler@sanpham')->name('home.sanpham');
 Route::get('lienhe', 'Client\HomeControler@lienhe')->name('home.lienhe');
 Route::get('gioithieu', 'Client\HomeControler@gioithieu')->name('home.gioithieu');
+Route::get('chitiet', 'Client\HomeControler@chitiet')->name('home.chitiet');
 Route::get('login', 'Client\LoginControler@index')->name('login.post');
 

@@ -18,6 +18,22 @@
                         @endforeach
                     </div><!--/category-productsr-->
 
+                    <h2>Hãng</h2>
+                    <div class="panel-group category-products" ><!--category-productsr-->
+                        @foreach($hang as $item)
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        {{$item->TenNhaSanXuat}}
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div><!--/category-productsr-->
+
+
                     <div class="brands_products"><!--brands_products-->
                         <h2>Giá Bán</h2>
                         <div class="brands-name">
@@ -32,9 +48,6 @@
                             </ul>
                         </div>
                     </div><!--/brands_products-->
-
-
-
 
 
                 </div>
@@ -65,7 +78,7 @@
                                             echo $abc . "đ";
                                             ?></h2>
                                         <p>{{$item->TenHH}}</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
+                                        <a href="" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm</a>
 
                                     </div>
@@ -76,11 +89,12 @@
                     </div>
                     @endforeach
 
-                    <div class="pagination">
-                        {!! $hanghoa->render() !!}
-                    </div>
+
 
                 </div><!--features_items-->
+                <div class="pagination">
+                    {!! $hanghoa->render() !!}
+                </div>
             </div>
         </div>
     </div>
