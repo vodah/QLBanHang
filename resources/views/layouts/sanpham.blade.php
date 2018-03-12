@@ -66,7 +66,7 @@
                                         $abc = number_format($aaa, 0, ',', '.');
                                         echo $abc . "đ";
                                         ?></h2>
-                                    <p>{{$item->TenHH}}</p>
+                                    <p class="p_namesp">{{$item->TenHH}}</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i
                                             class="fa fa-shopping-cart"></i>Thêm</a>
@@ -77,7 +77,7 @@
                                             $abc = number_format($aaa, 0, ',', '.');
                                             echo $abc . "đ";
                                             ?></h2>
-                                        <p>{{$item->TenHH}}</p>
+                                        <p class="p_namesp">{{$item->TenHH}}</p>
                                         <a href="" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm</a>
 
