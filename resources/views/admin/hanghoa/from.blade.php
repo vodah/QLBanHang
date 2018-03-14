@@ -13,6 +13,38 @@
         @endif
 
     </div>
+
+    <div class="form-group relative">
+        <label for="slug">URL <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" value="{{$slug}}" id="slug" name="slug" placeholder="URL">
+        <button type="button" id="generate-slug" class="add-on-input-post-form btn btn-sm btn-success">Tạo đường dẫn</button>
+        @if(asset($errors->first('slug')))
+        <span class="text-danger">{{$errors->first('slug')}}</span>
+        @endif
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#generate-slug').on('click', function(){
+                var TenHH = $('#TenHH').val();
+                $.ajax({
+                    url: '{{route('generate.slug')}}',
+                    method: "POST",
+                    data: {
+                    _token: '{{csrf_token()}}',
+                        TenHH: TenHH
+                },
+                dataType: "JSON",
+                    success: function (rp){
+                    $('#slug').val(rp.slug);
+                },
+                error: function(xhr, error, msg){
+                    console.log(msg);
+                }
+            });
+            });
+        });
+    </script>
+
     <div class="form-group">
         <label for="LoaiHH">Nhóm Sản Phẩm<span class="text-danger span_required"> * </span></label>
         <select name="LoaiHH" class="form-control">
@@ -130,6 +162,9 @@
 </form>
 
 @endsection
+
+
+
 
 <!-- jQuery 2.2.3 -->
 <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>

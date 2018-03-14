@@ -1,7 +1,6 @@
 <?php
-Route::get('not-found', function(){
-    return view('not-found');
-})->name('error.404');
+use Illuminate\Http\Request;
+use App\Model\hanghoa;
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', function ($msg = null) {
@@ -70,14 +69,29 @@ Route::group(['prefix' => 'admin'], function () {
            Route::get('gioithieu', 'Admin\CauHinhController@gioithieu')->name('cauhinh.gioithieu');
            Route::post('thongtin/luu', 'Admin\CauHinhController@luu')->name('cauhinh.luu');
         });
+        Route::post('generate-slug', function(Request $request){
+            $slug = str_slug($request->input('TenHH'), '-');
+            $slug .= '-' . uniqid();
+            return response()->json(['slug' => $slug]);
+        })->name('generate.slug');
     });
 });
 Route::get('/', 'Client\HomeControler@index')->name('home.list');
-Route::get('sanpham', 'Client\HomeControler@sanpham')->name('home.sanpham');
+
 Route::get('lienhe', 'Client\HomeControler@lienhe')->name('home.lienhe');
 Route::get('gioithieu', 'Client\HomeControler@gioithieu')->name('home.gioithieu');
-Route::get('chitiet', 'Client\HomeControler@chitiet')->name('home.chitiet');
 Route::get('login', 'Client\LoginControler@index')->name('login.post');
+
+Route::get('sanpham', 'Client\HomeControler@sanpham')->name('home.sanpham');
+
+Route::get('/{slug}', 'Client\HomeControler@getView');
+
+
+
+
+Route::get('not-found', function(){
+    return view('not-found');
+})->name('error.404');
 
 
 

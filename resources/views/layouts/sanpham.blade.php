@@ -67,7 +67,7 @@
                                         echo $abc . "đ";
                                         ?></h2>
                                     <p class="p_namesp">{{$item->TenHH}}</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
+                                    <a href="{{$item->slug}}" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
                                     <a href="#" class="btn btn-default add-to-cart"><i
                                             class="fa fa-shopping-cart"></i>Thêm</a>
                                 </div>
@@ -78,7 +78,7 @@
                                             echo $abc . "đ";
                                             ?></h2>
                                         <p class="p_namesp">{{$item->TenHH}}</p>
-                                        <a href="" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
+                                        <a href="{{$item->slug}}" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm</a>
 
                                     </div>

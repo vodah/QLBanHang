@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\hanghoa;
+use App\Model\slug;
 use Validator;
 use File;
 
@@ -33,11 +34,12 @@ class HangHoaController extends Controller
     public function them()
     {
         $them = new hanghoa(); //goi model tao 1 du lieu moi
+        $slug = "";
 
         $hang = hanghoa::all(); //goi den model va lay toan bo du lieu lay duoc gan vao bien $hang
         $nhasx = DB::table('nhasanxuat')->get();
         $loaihang = DB::table('loaihanghoa')->get(); //goi model loaihanghoa va gan vao bien $loaihang
-        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang', 'nhasx')); //tra du lieu select duoc ra ngoai view
+        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang', 'nhasx' , 'slug')); //tra du lieu select duoc ra ngoai view
     }
 
     public function sua($id)
@@ -46,11 +48,13 @@ class HangHoaController extends Controller
         if (!$them) { //kiem tra bien $them co ton tai hay khong
             return redirect(route('loaisp.list')); // neu khong ton tai thi chuyen ve trang list san pham
         }
+        $slugObj = Slug::where('TenHH_id', $them->id)->first();
+        $slug = $slugObj == null ? "" : $slugObj->slug;
 
         $hang = hanghoa::all(); //goi den model va lay toan bo du lieu lay duoc gan vao bien $hang
         $loaihang = DB::table('loaihanghoa')->get();//goi model loaihanghoa va gan vao bien $loaihang
         $nhasx = DB::table('nhasanxuat')->get();//goi model loaihanghoa va gan vao bien $loaihang
-        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang', 'nhasx')); //tra du lieu select duoc ra ngoai view
+        return view('admin.hanghoa.from', compact('them', 'hang', 'loaihang', 'nhasx' , 'slug')); //tra du lieu select duoc ra ngoai view
     }
 
     public function luu(Request $request)
@@ -62,6 +66,8 @@ class HangHoaController extends Controller
         $SoLuong = $all['SoLuong'];//gan SoLuong vao bien $SoLuong
         $DonGia = $all['DonGia'];//gan DonGia vao bien $DonGia
         $NhaSanXuat = $all['NhaSanXuat'];
+        $slug = $all['slug'];
+
 
         $MoTa = $all['MoTa'];//gan MoTa vao bien $MoTa
 //        var_dump($all);
@@ -164,10 +170,13 @@ class HangHoaController extends Controller
         $them->MoTa = $MoTa;
         $them->NoiBat = $NoiBat;
         $them->NhaSanXuat = $NhaSanXuat;
+        $them->slug = $slug;
 
 
         $them->save(); //luu gia tri cua bien $them vao database
         $request->session()->flash('status', 'Đã lưu thành công vào CSDL!'); // hien thi thong bao luu thanh cong cho nguoi dung
+
+//        Slug::saveSlug( $them->id, $request->input('slug'));
         return redirect(route('loaisp.list')); //quay tro lai trang sanh sach
 
     }

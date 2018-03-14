@@ -5232,3 +5232,9 @@ table.text-center, table.text-center td, table.text-center th {
 .button_hang {
     width: 84px;
 }
+
+.add-on-input-post-form{
+    float: right;
+    margin-top: -36px;
+    height: 36px;
+}
