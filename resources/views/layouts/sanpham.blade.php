@@ -68,8 +68,7 @@
                                         ?></h2>
                                     <p class="p_namesp">{{$item->TenHH}}</p>
                                     <a href="{{$item->slug}}" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
-                                    <a href="#" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Thêm</a>
+                                    <a href="" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
@@ -79,7 +78,7 @@
                                             ?></h2>
                                         <p class="p_namesp">{{$item->TenHH}}</p>
                                         <a href="{{$item->slug}}" class="btn btn-default add-to-cart"><i class="fa fa-info-circle"></i>Chi tiết</a>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm</a>
+                                        <a href="" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm</a>
 
                                     </div>
                                 </div>
