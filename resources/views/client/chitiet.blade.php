@@ -2,4 +2,4 @@
 @extends('layouts.chitiet')
 @extends('layouts.client')
 
-@section('title')
+@section('title', $hanghoa->TenHH)

@@ -87,8 +87,6 @@ Route::get('sanpham', 'Client\HomeControler@sanpham')->name('home.sanpham');
 Route::get('/{slug}', 'Client\HomeControler@getView');
 
 
-
-
 Route::get('not-found', function(){
     return view('not-found');
 })->name('error.404');
