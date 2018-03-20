@@ -1,6 +1,5 @@
 <?php
 use Illuminate\Http\Request;
-use App\Model\hanghoa;
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', function ($msg = null) {
